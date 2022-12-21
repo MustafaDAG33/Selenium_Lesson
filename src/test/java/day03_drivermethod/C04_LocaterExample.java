@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.List;
 
 public class C04_LocaterExample {
     public static void main(String[] args) {
@@ -22,8 +23,11 @@ public class C04_LocaterExample {
         //Search(ara) “city bike”
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys("city bike", Keys.ENTER);
         //Amazon'da görüntülenen ilgili sonuçların sayısını yazdırın
-        WebElement aramaSonucYazisi =   driver.findElement(By.className("sg-col-inner"));
-        System.out.println(aramaSonucYazisi.getText());
+        List<WebElement> aramaSonucYazisi =   driver.findElements(By.className("sg-col-inner"));
+        System.out.println(aramaSonucYazisi.get(0).getText());
         //Sonra karşınıza çıkan ilk sonucun resmine tıklayın.
+        //List<WebElement> lw =       driver.findElements(By.className("s-image"));
+
+
     }
 }
